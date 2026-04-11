@@ -6,29 +6,29 @@ import java.util.List;
 @Entity
 @Table(name = "perfiles")
 
-public class Perfiles {
+public class Perfil {
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id_perfil;
+	private int idPerfil;
 	
 	
 	private String nombre;
 	private BigDecimal tasa_standard;
 	
 	@OneToMany(mappedBy = "perfiles")
-    private List<Empleados> empleados;
+    private List<Empleado> empleado;
 	
-	public Perfiles() {
+	public Perfil() {
 		
 	}
 
 	public int getId_perfil() {
-		return id_perfil;
+		return idPerfil;
 	}
 
 	public void setId_perfil(int id_perfil) {
-		this.id_perfil = id_perfil;
+		this.idPerfil = id_perfil;
 	}
 
 	public String getNombre() {

@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "empleados")
-public class Empleados { //*Declaramos los atributos referentes a empleado//*
+public class Empleado { //*Declaramos los atributos referentes a empleado//*
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,15 +25,15 @@ public class Empleados { //*Declaramos los atributos referentes a empleado//*
 	
 	@ManyToOne
 	@JoinColumn(name = "id_depar")
-	private Departamentos departamentos;
+	private Departamento departamento;
 	
 	@ManyToOne
     @JoinColumn(name = "id_perfil")
-	private Perfiles perfil;
+	private Perfil perfil;
 	
 	//*Generamos el constructor vacío //*
 	
-	public Empleados () {
+	public Empleado () {
 		
 	}
 	
@@ -113,19 +113,19 @@ public class Empleados { //*Declaramos los atributos referentes a empleado//*
 		this.fecha_Ingreso = fecha_Ingreso;
 	}
 
-	public Departamentos getDepartamentos() {
-		return departamentos;
+	public Departamento getDepartamentos() {
+		return departamento;
 	}
 
-	public void setDepartamentos(Departamentos departamentos) {
-		this.departamentos = departamentos;
+	public void setDepartamentos(Departamento departamento) {
+		this.departamento = departamento;
 	}
 
-	public Perfiles getPerfil() {
+	public Perfil getPerfil() {
 		return perfil;
 	}
 
-	public void setPerfil(Perfiles perfil) {
+	public void setPerfil(Perfil perfil) {
 		this.perfil = perfil;
 	}
 	

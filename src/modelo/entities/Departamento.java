@@ -4,7 +4,7 @@ import java.util.List;
 
 
 
-public class Departamentos {
+public class Departamento {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,9 +14,9 @@ public class Departamentos {
 	private String direccion;
 	
 	@OneToMany(mappedBy = "departamentos")
-    private List<Empleados> empleados;
+    private List<Empleado> empleado;
 	
-	public Departamentos() {
+	public Departamento() {
 		
 	}
 	
