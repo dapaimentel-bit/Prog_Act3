@@ -3,17 +3,19 @@ import jakarta.persistence.*;
 import java.util.List;
 
 
-
+@Entity
+@Table(name = "departamentos")
 public class Departamento {
 	
 	@Id
+	@Column(name = "id_depar")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id_depar;
+	private int idDepar;
 	
 	private String nombre;
 	private String direccion;
 	
-	@OneToMany(mappedBy = "departamentos")
+	@OneToMany(mappedBy = "departamento")
     private List<Empleado> empleado;
 	
 	public Departamento() {
@@ -21,10 +23,10 @@ public class Departamento {
 	}
 	
 	public int getId_depar() {
-		return id_depar;
+		return idDepar;
 	}
 	public void setId_depar(int id_depar) {
-		this.id_depar = id_depar;
+		this.idDepar = id_depar;
 	}
 	public String getNombre() {
 		return nombre;

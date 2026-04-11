@@ -1,148 +1,143 @@
 package modelo.entities;
-import java.time.LocalDate;
+
+import java.util.Date;
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "empleados")
-public class Empleado { //*Declaramos los atributos referentes a empleado//*
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id_empl;
-	
-	private String nombre;
-	private String apellidos;
-	private char genero;
-	private String email;
-	private String password;
-	private double salario;
-	
-	@Temporal(TemporalType.DATE)
-	private LocalDate fecha_Nacimiento;
-	
-	@Temporal(TemporalType.DATE)
-	private LocalDate fecha_Ingreso;
-	
-	@ManyToOne
-	@JoinColumn(name = "id_depar")
-	private Departamento departamento;
-	
-	@ManyToOne
+public class Empleado {
+
+    @Id
+    @Column(name = "id_empl")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int idEmpleado;
+
+    private String nombre;
+    private String apellidos;
+    private char genero;
+    private String email;
+    private String password;
+    private double salario;
+
+    @Temporal(TemporalType.DATE)
+    @Column(name = "fecha_nacimiento")
+    private Date fechaNacimiento;
+
+    @Temporal(TemporalType.DATE)
+    @Column(name = "fecha_ingreso")
+    private Date fechaIngreso;
+
+    @ManyToOne
+    @JoinColumn(name = "id_depar")
+    private Departamento departamento;
+
+    @ManyToOne
     @JoinColumn(name = "id_perfil")
-	private Perfil perfil;
-	
-	//*Generamos el constructor vacío //*
-	
-	public Empleado () {
-		
-	}
-	
-	//* Todos los getters/setters//*
+    private Perfil perfil;
 
-	public int getId_empl() {
-		return id_empl;
-	}
+    public Empleado() {}
 
+    // GETTERS / SETTERS
 
-	public void setId_empl(int id_empl) {
-		this.id_empl = id_empl;
-	}
+    public int getIdEmpleado() {
+        return idEmpleado;
+    }
 
+    public void setIdEmpleado(int idEmpleado) {
+        this.idEmpleado = idEmpleado;
+    }
 
-	public String getNombre() {
-		return nombre;
-	}
+    public String getNombre() {
+        return nombre;
+    }
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
-	public String getApellidos() {
-		return apellidos;
-	}
+    public String getApellidos() {
+        return apellidos;
+    }
 
-	public void setApellidos(String apellidos) {
-		this.apellidos = apellidos;
-	}
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
+    }
 
-	public char getGenero() {
-		return genero;
-	}
+    public char getGenero() {
+        return genero;
+    }
 
-	public void setGenero(char genero) {
-		this.genero = genero;
-	}
+    public void setGenero(char genero) {
+        this.genero = genero;
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    public String getEmail() {
+        return email;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-	public String getPassword() {
-		return password;
-	}
+    public String getPassword() {
+        return password;
+    }
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
-	public double getSalario() {
-		return salario;
-	}
+    public double getSalario() {
+        return salario;
+    }
 
-	public void setSalario(double salario) {
-		this.salario = salario;
-	}
+    public void setSalario(double salario) {
+        this.salario = salario;
+    }
 
-	public LocalDate getFecha_Nacimiento() {
-		return fecha_Nacimiento;
-	}
+    public Date getFechaNacimiento() {
+        return fechaNacimiento;
+    }
 
-	public void setFecha_Nacimiento(LocalDate fecha_Nacimiento) {
-		this.fecha_Nacimiento = fecha_Nacimiento;
-	}
+    public void setFechaNacimiento(Date fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
+    }
 
-	public LocalDate getFecha_Ingreso() {
-		return fecha_Ingreso;
-	}
+    public Date getFechaIngreso() {
+        return fechaIngreso;
+    }
 
-	public void setFecha_Ingreso(LocalDate fecha_Ingreso) {
-		this.fecha_Ingreso = fecha_Ingreso;
-	}
+    public void setFechaIngreso(Date fechaIngreso) {
+        this.fechaIngreso = fechaIngreso;
+    }
 
-	public Departamento getDepartamentos() {
-		return departamento;
-	}
+    public Departamento getDepartamento() {
+        return departamento;
+    }
 
-	public void setDepartamentos(Departamento departamento) {
-		this.departamento = departamento;
-	}
+    public void setDepartamento(Departamento departamento) {
+        this.departamento = departamento;
+    }
 
-	public Perfil getPerfil() {
-		return perfil;
-	}
+    public Perfil getPerfil() {
+        return perfil;
+    }
 
-	public void setPerfil(Perfil perfil) {
-		this.perfil = perfil;
-	}
-	
-	//* Los 3 metodos a implementar//*
-	
-	public double salarioMensual(int meses) {
-		return salario * meses;
-		
-	}
-	
-	public String literalGenero() {
-		return genero == 'H' ? "Hombre" : "Mujer";
-	}
-	
-	 public String nombreCompleto() {
-	        return nombre + " " + apellidos;
-	    }
+    public void setPerfil(Perfil perfil) {
+        this.perfil = perfil;
+    }
 
+    // MÉTODOS
 
+    public double salarioMensual(int meses) {
+        return salario * meses;
+    }
+
+    public String literalGenero() {
+        return genero == 'H' ? "Hombre" : "Mujer";
+    }
+
+    public String nombreCompleto() {
+        return nombre + " " + apellidos;
+    }
 }

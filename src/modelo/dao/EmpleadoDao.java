@@ -8,7 +8,12 @@ public interface EmpleadoDao {
 	List<Empleado> empleadosByGenero (char sexo);
 	List<Empleado> empleadosByApellido (String subcadena);
 	public double salarioTotal();
-	public double salarioTotal(int id_depar);
+	public double salarioTotal(int idDepar);
+	List<Empleado> findAll();
+	Empleado findById(int idEmpleado);
+	void save(Empleado e);
+	void update(Empleado e);
+	void delete(int idEmpleado);
 	
 
 }

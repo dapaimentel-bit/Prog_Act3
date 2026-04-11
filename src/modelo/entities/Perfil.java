@@ -9,14 +9,16 @@ import java.util.List;
 public class Perfil {
 	
 	@Id
+	@Column(name = "id_perfil")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idPerfil;
 	
 	
 	private String nombre;
-	private BigDecimal tasa_standard;
+	@Column(name = "tasa_standard")
+	private BigDecimal tasaStandard;
 	
-	@OneToMany(mappedBy = "perfiles")
+	@OneToMany(mappedBy = "perfil")
     private List<Empleado> empleado;
 	
 	public Perfil() {
@@ -39,12 +41,12 @@ public class Perfil {
 		this.nombre = nombre;
 	}
 
-	public BigDecimal getTasa_standard() {
-		return tasa_standard;
+	public BigDecimal getTasastandard() {
+		return tasaStandard;
 	}
 
-	public void setTasa_standard(BigDecimal tasa_standard) {
-		this.tasa_standard = tasa_standard;
+	public void setTasa_standard(BigDecimal tasaStandard) {
+		this.tasaStandard = tasaStandard;
 	}
 	
 	
