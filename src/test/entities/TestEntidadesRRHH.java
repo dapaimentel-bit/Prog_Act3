@@ -4,7 +4,7 @@ import modelo.entities.Departamento;
 import modelo.entities.Empleado;
 import modelo.entities.Perfil;
 
-public class TestEntidades {
+public class TestEntidadesRRHH {
 
     public static void main(String[] args) {
 

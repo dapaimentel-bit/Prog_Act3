@@ -1,6 +1,5 @@
 package modelo.entities;
 import jakarta.persistence.*;
-import java.math.BigDecimal;
 import java.util.List;
 
 @Entity
@@ -16,7 +15,7 @@ public class Perfil {
 	
 	private String nombre;
 	@Column(name = "tasa_standard")
-	private BigDecimal tasaStandard;
+	private double tasaStandard;
 	
 	@OneToMany(mappedBy = "perfil")
     private List<Empleado> empleado;
@@ -41,11 +40,11 @@ public class Perfil {
 		this.nombre = nombre;
 	}
 
-	public BigDecimal getTasastandard() {
+	public double getTasaStandard() {
 		return tasaStandard;
 	}
 
-	public void setTasa_standard(BigDecimal tasaStandard) {
+	public void setTasa_standard(double tasaStandard) {
 		this.tasaStandard = tasaStandard;
 	}
 	

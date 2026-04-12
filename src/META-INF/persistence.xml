@@ -11,6 +11,9 @@
         <class>modelo.entities.Empleado</class>
         <class>modelo.entities.Departamento</class>
         <class>modelo.entities.Perfil</class>
+        <class>modelo.entities.Cliente</class>
+        <class>modelo.entities.Proyecto</class>
+        <class>modelo.entities.ProyectoConEmpleados</class>
 
         <properties>
 
