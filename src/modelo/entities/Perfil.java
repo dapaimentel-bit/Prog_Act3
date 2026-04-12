@@ -25,11 +25,11 @@ public class Perfil {
 		
 	}
 
-	public int getId_perfil() {
+	public int getIdPerfil() {
 		return idPerfil;
 	}
 
-	public void setId_perfil(int id_perfil) {
+	public void setIdPerfil(int id_perfil) {
 		this.idPerfil = id_perfil;
 	}
 

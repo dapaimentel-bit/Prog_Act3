@@ -11,7 +11,7 @@ import modelo.entities.Empleado;
 public class EmpleadoDaoImpl implements EmpleadoDao {
 
     private EntityManagerFactory emf =
-        Persistence.createEntityManagerFactory("proyectos_FP_2025");
+        Persistence.createEntityManagerFactory("proyectos_fp_2025");
 
     // ---------------- CRUD ----------------
 
@@ -74,7 +74,7 @@ public class EmpleadoDaoImpl implements EmpleadoDao {
         return lista;
     }
 
-    // ---------------- CONSULTAS ----------------
+    // Consultas para luego aplicar en los tests
 
     @Override
     public List<Empleado> empleadosByDepartamento(int idDepar) {
@@ -136,7 +136,7 @@ public class EmpleadoDaoImpl implements EmpleadoDao {
         EntityManager em = emf.createEntityManager();
 
         Double total = em.createQuery(
-            "SELECT SUM(e.salario) FROM Empleado e WHERE e.departamento.idDepartamento = :id",
+            "SELECT SUM(e.salario) FROM Empleado e WHERE e.departamento.idDepar = :id",
             Double.class)
             .setParameter("id", idDepar)
             .getSingleResult();

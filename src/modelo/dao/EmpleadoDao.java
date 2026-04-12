@@ -4,6 +4,8 @@ import java.util.List;
 
 public interface EmpleadoDao {
 	
+	//Metodos del interface
+	
 	List<Empleado> empleadosByDepartamento (int id_depar);
 	List<Empleado> empleadosByGenero (char sexo);
 	List<Empleado> empleadosByApellido (String subcadena);

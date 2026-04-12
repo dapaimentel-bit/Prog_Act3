@@ -7,6 +7,8 @@ import jakarta.persistence.Persistence;
 public class TestConexion {
 
     public static void main(String[] args) {
+    	
+    	//Test de conexion a la base de datos
 
         EntityManagerFactory emf =
             Persistence.createEntityManagerFactory("proyectos_fp_2025");

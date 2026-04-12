@@ -22,10 +22,10 @@ public class Departamento {
 		
 	}
 	
-	public int getId_depar() {
+	public int getIdDepar() {
 		return idDepar;
 	}
-	public void setId_depar(int id_depar) {
+	public void setIdDepar(int id_depar) {
 		this.idDepar = id_depar;
 	}
 	public String getNombre() {
